@@ -309,7 +309,7 @@ transform:translateY(-2px);
   width: 270px;
   background:rgb(255, 255, 255);
 
-  border:1px solid rgba(190, 185, 185, 0.642);
+  border:0px solid rgba(190, 185, 185, 0.642);
 
   backdrop-filter:blur(18px);
 
