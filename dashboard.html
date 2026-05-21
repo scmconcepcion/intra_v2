@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IntraOne | Dashboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+
+  <!-- SEARCH -->
+  <div class="search-box">
+
+    <i class="fa-solid fa-magnifying-glass"></i>
+
+    <input
+      type="text"
+      placeholder="Search..."
+    >
+
+  </div>
+
+  <!-- RIGHT -->
+  <div class="topbar-right">
+
+    <button class="settings-btn">
+      <i class="fa-solid fa-gear"></i>
+    </button>
+
+    <div class="profile-menu">
+
+      <button class="profile-btn">
+
+        <div class="profile-avatar">
+          S
+        </div>
+
+        <span>Shiela</span>
+
+        <i class="fa-solid fa-chevron-down"></i>
+
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- MAIN -->
+<main class="dashboard">
+
+  <!-- DATE -->
+  <section class="time-section">
+
+    <p class="today-date" id="currentDate">
+      2026/05/21
+    </p>
+
+    <h1 id="currentTime">
+      12:00:00
+    </h1>
+
+  </section>
+
+  <!-- ATTENDANCE -->
+ <section class="attendance-buttons">
+
+  <button class="clock-btn primary">
+  <i class="fa-solid fa-user-check"></i>
+  出勤
+</button>
+
+<button class="clock-btn break">
+  <i class="fa-solid fa-mug-hot"></i>
+  休憩
+</button>
+
+<button class="clock-btn danger">
+  <i class="fa-solid fa-door-open"></i>
+  退勤
+</button>
+
+    </section>
+
+  <!-- MENU GRID -->
+  <section class="menu-grid">
+
+    <div class="menu-card">
+      <i class="fa-solid fa-bullhorn"></i>
+      <p>お知らせ</p>
+    </div>
+
+    <div class="menu-card">
+      <i class="fa-solid fa-calendar"></i>
+      <p>カレンダー</p>
+    </div>
+
+    <div class="menu-card">
+      <i class="fa-solid fa-file-pen"></i>
+      <p>日報</p>
+    </div>
+
+    <div class="menu-card">
+      <i class="fa-solid fa-briefcase"></i>
+      <p>業務報告</p>
+    </div>
+
+    <div class="menu-card">
+      <i class="fa-solid fa-train"></i>
+      <p>通勤補助</p>
+    </div>
+
+    <div class="menu-card">
+      <i class="fa-solid fa-plane-departure"></i>
+      <p>休暇・欠勤申請</p>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- FLOATING CHAT -->
+<button class="chat-btn">
+
+  <i class="fa-solid fa-comment-dots"></i>
+
+</button>
+
+<script>
+
+function updateDateTime(){
+
+  const now = new Date();
+
+  // JST DATE
+  const dateOptions = {
+    timeZone: "Asia/Tokyo",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    weekday: "long"
+  };
+
+  // JST TIME
+  const timeOptions = {
+    timeZone: "Asia/Tokyo",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+  };
+
+  const currentDate =
+    now.toLocaleDateString("ja-JP", dateOptions);
+
+  const currentTime =
+    now.toLocaleTimeString("ja-JP", timeOptions);
+
+  document.getElementById("currentDate").textContent =
+    currentDate;
+
+  document.getElementById("currentTime").textContent =
+    currentTime;
+}
+
+// RUN IMMEDIATELY
+updateDateTime();
+
+// UPDATE EVERY SECOND
+setInterval(updateDateTime, 1000);
+
+</script>
+
+</body>
+</html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,73 +19,126 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
 <section class="hero">
 
-<div class="glow glow1"></div>
-<div class="glow glow2"></div>
+  <!-- GLOW -->
+  <div class="glow glow1"></div>
+  <div class="glow glow2"></div>
 
-<div class="particles">
-  <span></span><span></span><span></span>
-  <span></span><span></span>
-</div>
+  <!-- PARTICLES -->
+  <div class="particles">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 
-<div class="hero-content">
+  <div class="hero-content">
 
-  <!-- LEFT -->
-  <div class="left-content">
+    <!-- LEFT CONTENT -->
+    <div class="left-content">
 
-    <div class="logo-wrap">
-      <img src="images/logo.png" alt="GBI Logo">
+      <!-- LOGO -->
+      <div class="logo-wrap">
 
-      <div class="logo-text">
-        <span class="small-text">株式会社</span>
-        <h1>グローバルイノベーション</h1>
+        <img src="images/logo.png" alt="GBI Logo">
+
+        <div class="logo-text">
+          <span class="small-text">株式会社</span>
+          <h1>グローバルイノベーション</h1>
+        </div>
+
       </div>
+
+      <!-- WELCOME -->
+      <div class="welcome-text">
+        <h2>Welcome to IntraOne</h2>
+      </div>
+
+      <div class="welcome-sub">
+        <p>社内システムへログイン</p>
+      </div>
+
+      <!-- LOGIN CARD -->
+      <div class="login-card">
+
+        <form id="loginForm">
+
+          <div class="input-group">
+            <label>メールアドレス</label>
+
+            <input
+              type="email"
+              placeholder="sample@gbi.co.jp"
+            >
+          </div>
+
+          <div class="input-group">
+            <label>パスワード</label>
+
+            <input
+              type="password"
+              placeholder="••••••••"
+            >
+          </div>
+
+          <button type="submit" class="login-btn">
+            ログイン
+          </button>
+
+        </form>
+
+      </div>
+
     </div>
 
-    <div class="welcome-text">
-      <h2>Welcome to IntraOne</h2>
-       </div> 
-     <div class="welcome-sub">
-      <p>社内システムへログイン</p>
-    </div>
-
-    <!-- LOGIN CARD -->
-    <div class="login-card">
-
-      <form>
-
-        <div class="input-group">
-          <label>メールアドレス</label>
-          <input type="email" placeholder="sample@gbi.co.jp">
-        </div>
-
-        <div class="input-group">
-          <label>パスワード</label>
-          <input type="password" placeholder="••••••••">
-        </div>
-
-        <button type="submit" class="login-btn">
-          ログイン
-        </button>
-
-      </form>
-
-    </div>
+  
 
   </div>
 
-  <!-- RIGHT
-  <div class="hero-image">
-    <img src="images/hero.png" alt="Hero">
-  </div>
-
-</div>
- -->
 </section>
 
+<!-- FOOTER -->
 <footer>
-    <br><br>
-  <p>Copyright &#169; 2026 株式会社グローバルイノベーション All Rights Reserved.</p>
+  <p>
+    Copyright &#169; 2026
+    株式会社グローバルイノベーション
+    All Rights Reserved.
+  </p>
 </footer>
+
+<!-- LOGIN DEMO SCRIPT -->
+<script>
+
+document
+.getElementById("loginForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const email =
+      document.querySelector('input[type="email"]').value;
+
+    const password =
+      document.querySelector('input[type="password"]').value;
+
+    // DEMO ACCOUNT
+    const demoEmail = "admin@gbi.co.jp";
+    const demoPassword = "gbi123";
+
+    if(email === demoEmail &&
+       password === demoPassword){
+
+        window.location.href = "dashboard.html";
+
+    }else{
+
+        alert("メールアドレスまたはパスワードが違います");
+
+    }
+
+});
+
+</script>
 
 </body>
 </html>
