@@ -117,7 +117,7 @@ body::before{
   transition:0.25s ease;
 
   box-shadow:
-  0 10px 30px rgba(60,45,30,0.06);
+  0 10px 30px rgba(42, 31, 15, 0.231);
 }
 
 .settings-btn:hover{
@@ -246,9 +246,8 @@ transform:translateY(-2px);
   font-weight:500;
 
   transition:0.25s ease;
-
   box-shadow:
-  0 10px 25px rgba(0, 0, 0, 0);
+  0 10px 30px rgba(42, 31, 15, 0.231);
 }
 
 .clock-btn i{
