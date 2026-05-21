@@ -220,7 +220,7 @@ transform:translateY(-2px);
 
   display:flex;
   justify-content:center;
-  gap:18px;
+  gap:40px;
 
   flex-wrap:wrap;
 }
@@ -240,7 +240,7 @@ transform:translateY(-2px);
   align-items:center;
   justify-content:center;
 
-  gap:15px;
+  gap:20px;
 
   font-size:20px;
   font-weight:500;
@@ -248,7 +248,7 @@ transform:translateY(-2px);
   transition:0.25s ease;
   box-shadow:
   0 10px 30px rgba(42, 31, 15, 0.231);
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .clock-btn i{
