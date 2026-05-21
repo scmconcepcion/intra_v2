@@ -170,7 +170,7 @@ body::before{
 
   gap:14px;
  
-  margin-left: -30px;
+  margin-left: -80px;
 }
 
 .logo-wrap img{
@@ -178,8 +178,9 @@ body::before{
 }
 
 .small-text{
-  font-size:12px;
+  font-size:15px;
   color:#7b746d;
+  font-weight: 500;
 }
 
 .logo-text h1{
@@ -209,7 +210,8 @@ body::before{
   margin-bottom:32px;
 
   color:#7c746d;
-  font-size:15px;
+  font-size:18px;
+  font-weight: 600;
 }
 
 /* LOGIN CARD */
