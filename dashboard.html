@@ -35,25 +35,45 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   <!-- RIGHT -->
   <div class="topbar-right">
 
+    <!-- PROFILE -->
+    <div class="profile-menu" id="profileMenu">
+
+  <button class="profile-btn" id="profileToggle">
+
+  <div class="profile-info">
+
+    <div class="profile-avatar">
+      A
+    </div>
+
+    <span>管理者</span>
+
+  </div>
+
+  <i class="fa-solid fa-chevron-down"></i>
+
+</button>
+
+  <!-- DROPDOWN -->
+  <div class="dropdown-menu" id="dropdownMenu">
+
+    <a href="#">
+      <i class="fa-regular fa-user"></i>
+      マイプロフィール
+    </a>
+
+    <a href="#" id="logoutBtn">
+      <i class="fa-solid fa-right-from-bracket"></i>
+      ログアウト
+    </a>
+
+  </div>
+
+</div>
+    <!-- SETTINGS -->
     <button class="settings-btn">
       <i class="fa-solid fa-gear"></i>
     </button>
-
-    <div class="profile-menu">
-
-      <button class="profile-btn">
-
-        <div class="profile-avatar">
-          A
-        </div>
-
-        <span>管理者</span>
-
-        <i class="fa-solid fa-chevron-down"></i>
-
-      </button>
-
-    </div>
 
   </div>
 
@@ -62,38 +82,38 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 <!-- MAIN -->
 <main class="dashboard">
 
-  <!-- DATE -->
+  <!-- DATE/TIME -->
   <section class="time-section">
 
     <p class="today-date" id="currentDate">
-      2026/05/21
+      2026年5月21日 木曜日
     </p>
 
     <h1 id="currentTime">
-      12:00:00
+      00:00:00
     </h1>
 
   </section>
 
   <!-- ATTENDANCE -->
- <section class="attendance-buttons">
+  <section class="attendance-buttons">
 
-  <button class="clock-btn primary">
-  <i class="fa-solid fa-user-check"></i>
-  出勤
-</button>
+    <button class="clock-btn primary">
+      <i class="fa-solid fa-user-check"></i>
+      出勤
+    </button>
 
-<button class="clock-btn break">
-  <i class="fa-solid fa-mug-hot"></i>
-  休憩
-</button>
+    <button class="clock-btn break">
+      <i class="fa-solid fa-mug-hot"></i>
+      休憩
+    </button>
 
-<button class="clock-btn danger">
-  <i class="fa-solid fa-door-open"></i>
-  退勤
-</button>
+    <button class="clock-btn danger">
+      <i class="fa-solid fa-door-open"></i>
+      退勤
+    </button>
 
-    </section>
+  </section>
 
   <!-- MENU GRID -->
   <section class="menu-grid">
@@ -114,17 +134,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     </div>
 
     <div class="menu-card">
-      <i class="fa-solid fa-briefcase"></i>
+      <i class="fa-solid fa-laptop"></i>
       <p>業務報告書</p>
     </div>
 
     <div class="menu-card">
-      <i class="fa-solid fa-train"></i>
+      <i class="fa-solid fa-bus"></i>
       <p>通勤手当支給申請書</p>
     </div>
 
     <div class="menu-card">
-      <i class="fa-solid fa-plane-departure"></i>
+      <i class="fa-solid fa-solid fa-person-walking-luggage"></i>
       <p>休暇・欠勤申請</p>
     </div>
 
@@ -139,13 +159,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
 </button>
 
+<!-- SCRIPT -->
 <script>
+
+/* =========================
+   DATE / TIME (JST)
+========================= */
 
 function updateDateTime(){
 
   const now = new Date();
 
-  // JST DATE
   const dateOptions = {
     timeZone: "Asia/Tokyo",
     year: "numeric",
@@ -154,7 +178,6 @@ function updateDateTime(){
     weekday: "long"
   };
 
-  // JST TIME
   const timeOptions = {
     timeZone: "Asia/Tokyo",
     hour: "2-digit",
@@ -181,6 +204,56 @@ updateDateTime();
 
 // UPDATE EVERY SECOND
 setInterval(updateDateTime, 1000);
+
+
+/* =========================
+   PROFILE DROPDOWN
+========================= */
+
+const profileToggle =
+  document.getElementById("profileToggle");
+
+const dropdownMenu =
+  document.getElementById("dropdownMenu");
+
+profileToggle.addEventListener("click", function(e){
+
+  e.stopPropagation();
+
+  dropdownMenu.classList.toggle("show");
+
+});
+
+/* CLOSE WHEN CLICK OUTSIDE */
+
+document.addEventListener("click", function(){
+
+  dropdownMenu.classList.remove("show");
+
+});
+
+
+/* =========================
+   LOGOUT FUNCTION
+========================= */
+
+const logoutBtn =
+  document.getElementById("logoutBtn");
+
+logoutBtn.addEventListener("click", function(e){
+
+  e.preventDefault();
+
+  const confirmLogout =
+    confirm("ログアウトしますか？");
+
+  if(confirmLogout){
+
+    window.location.href = "index.html";
+
+  }
+
+});
 
 </script>
 

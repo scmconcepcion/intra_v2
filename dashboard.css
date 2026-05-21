@@ -47,7 +47,7 @@ body::before{
 .search-box{
   width:340px;
   height:52px;
-
+  align-items: center;
   background:rgba(255,255,255,0.52);
 
   border:1px solid rgba(255,255,255,0.65);
@@ -58,7 +58,7 @@ body::before{
   border-radius:18px;
 
   display:flex;
-  align-items:center;
+  
 
   padding:0 18px;
 
@@ -90,16 +90,16 @@ body::before{
 
 .topbar-right{
   display:flex;
-  align-items:center;
+  align-items:flex-start;
   gap:16px;
 }
 
 /* SETTINGS */
 
 .settings-btn{
-  width:50px;
-  height:50px;
-
+  width:60px;
+  height:60px;
+  margin-top: 0;
   border:none;
   cursor:pointer;
 
@@ -127,7 +127,8 @@ body::before{
 /* PROFILE */
 
 .profile-btn{
-  height:52px;
+  width: 100%;  
+  height:58px;
 
   padding:0 18px;
 
@@ -136,22 +137,27 @@ body::before{
 
   border-radius:18px;
 
-  background:rgba(255,255,255,0.52);
-
-  border:1px solid rgba(255,255,255,0.65);
+  background:rgba(255,255,255,0.60);
+  border:1px solid rgba(255,255,255,0.7);
+  border:none;
 
   backdrop-filter:blur(18px);
 
   display:flex;
   align-items:center;
   gap:12px;
-
+  justify-content:space-between;
   color:#2f2b28;
 
   box-shadow:
-  0 10px 30px rgba(60,45,30,0.06);
-
+  0 10px 30px rgba(15,23,42,0.06);
+  position:relative;
+  z-index:1001;
   transition:0.25s ease;
+}
+
+.profile-menu:hover{
+transform:translateY(-2px);
 }
 
 .profile-avatar{
@@ -169,8 +175,8 @@ body::before{
   align-items:center;
   justify-content:center;
 
-  font-size:14px;
-  font-weight:600;
+  font-size:15px;
+  font-weight:500;
 }
 
 /* MAIN */
@@ -234,10 +240,10 @@ body::before{
   align-items:center;
   justify-content:center;
 
-  gap:12px;
+  gap:15px;
 
-  font-size:15px;
-  font-weight:600;
+  font-size:20px;
+  font-weight:500;
 
   transition:0.25s ease;
 
@@ -287,20 +293,20 @@ body::before{
 
 .menu-grid{
   margin-top:60px;
-
+  align-items: center;
   display:grid;
-
+  justify-content: center;
   grid-template-columns:
-  repeat(auto-fit,minmax(260px,1fr));
+  repeat(3, 270px);
 
-  gap:18px;
+  gap:30px;
 }
 
 /* MENU CARD */
 
 .menu-card{
   height:72px;
-
+  width: 270px;
   background:rgb(255, 255, 255);
 
   border:1px solid rgba(190, 185, 185, 0.642);
@@ -314,7 +320,7 @@ body::before{
   text-align: center;  
   padding:0 22px;
   justify-content: center;
-  gap:16px;
+  gap:15px;
 
   cursor:pointer;
 
@@ -331,7 +337,7 @@ body::before{
 .menu-card i{
   font-size:18px;
 
-  color:#7b6f62;
+  color:#321e08e5;
 
   width:24px;
 
@@ -339,10 +345,10 @@ body::before{
 }
 
 .menu-card p{
-  font-size:15px;
-  font-weight:600;
+  font-size:18px;
+  font-weight:500;
 
-  color:#403933;
+  color:#6f5d4cec;
 }
 
 /* CHAT */
@@ -380,4 +386,123 @@ body::before{
   transform:
   translateY(-4px)
   scale(1.05);
+}
+
+/* PROFILE MENU */
+
+.profile-menu{
+  width:190px;
+  align-self: flex-start;
+  background:rgba(255,255,255,0.60);
+
+  border:1px solid rgba(255,255,255,0.7);
+
+  backdrop-filter:blur(18px);
+
+  border-radius:20px;
+
+  box-shadow:
+  0 10px 30px rgba(15,23,42,0.06);
+
+  overflow:visible;
+
+  position:relative;
+  font-size: 20px;
+}
+
+/* BUTTON */
+
+.profile-btn{
+  width:100%;
+  height:58px;
+
+  padding:0 18px;
+
+  border:none;
+  background:transparent;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  cursor:pointer;
+
+  color:#2f2b28;
+}
+
+.profile-btn span{
+  font-size:15px;
+  font-weight:500;
+  text-align: center;
+  letter-spacing:0.2px;
+}
+
+/* LEFT */
+
+.profile-info{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* DROPDOWN */
+.dropdown-menu{
+  position:absolute;
+
+  top:46px;
+  left:0;
+
+  width:100%;
+
+  display:none;
+  flex-direction:column;
+
+  padding:18px 8px 8px;
+
+  background:rgba(255,255,255,0.94);
+
+  border:1px solid rgba(255,255,255,0.7);
+
+  border-top:none;
+
+  backdrop-filter:blur(18px);
+
+  border-radius:
+  0 0 24px 24px;
+
+  box-shadow:
+  0 15px 35px rgba(15,23,42,0.08);
+
+  z-index:1000;
+}
+
+/* OPEN */
+
+.dropdown-menu.show{
+  display:flex;
+}
+
+/* LINKS */
+
+.dropdown-menu a{
+  text-decoration:none;
+
+  color:#4a433d;
+
+  font-size:14px;
+  font-weight:500;
+
+  padding:12px 14px;
+
+  border-radius:12px;
+
+  display:flex;
+  align-items:center;
+
+  gap:10px;
+}
+
+.dropdown-menu a:hover{
+  background:rgba(140,122,100,0.10);
+  transform:translateY(-2px);
 }
