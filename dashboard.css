@@ -45,8 +45,8 @@ body::before{
 /* SEARCH */
 
 .search-box{
-  width:340px;
-  height:52px;
+  width:1020px;
+  height:58px;
   align-items: center;
   background:rgba(255,255,255,0.52);
 
@@ -262,9 +262,9 @@ transform:translateY(-2px);
 /* 出勤 */
 
 .clock-btn.primary{
-  background:#baceb3;
+  background:#f7f1dadc;
 
-  color:#4d5b47;
+  color:#6a5f4b;
 
   border:0px solid #cad7c4;
 }
@@ -348,7 +348,7 @@ transform:translateY(-2px);
   font-size:18px;
   font-weight:500;
 
-  color:#6f5d4cec;
+  color:#6f5d4cd0;
 }
 
 /* CHAT */
@@ -505,4 +505,25 @@ transform:translateY(-2px);
 .dropdown-menu a:hover{
   background:rgba(140,122,100,0.10);
   transform:translateY(-2px);
+}
+
+/* FOOTER */
+
+footer{
+  position:fixed;
+
+  bottom:24px;
+  left:0;
+
+  width:100%;
+
+  text-align:center;
+
+  z-index:10;
+}
+
+footer p{
+  font-size:13px;
+
+  color:rgba(60,50,45,0.45);
 }
